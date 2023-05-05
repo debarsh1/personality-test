@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Personality Test</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f1f1f1;
+		}
+
+		h1 {
+			text-align: center;
+			color: #ffffff;
+			font-family: Arial, sans-serif;
+			text-transform: uppercase;
+			background-color: #6e65d3;
+			padding: 10px;
+			border-radius: 5px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+		}
+
+
+		form {
+			max-width: 600px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2), 0px 0px 20px rgba(0, 0, 15, 0.5);
+		}
+
+
+		fieldset {
+			margin-bottom: 20px;
+			border: none;
+		}
+
+		legend {
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+
+		input[type="radio"] {
+			margin-right: 5px;
+		}
+
+		button[type="submit"] {
+			display: block;
+			margin: 0 auto;
+			padding: 10px 20px;
+			background-color: #6e65d3;
+			color: #fff;
+			border: none;
+			font-size: 16px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+			border-radius: 20px;
+			/* adjust the value to your preference */
+		}
+
+		button[type="submit"]:hover {
+			background-color: #000000;
+		}
+
+		.result {
+			margin-top: 20px;
+			padding: 10px;
+			background-color: #6e65d3;
+			border-radius: 5px;
+			text-align: center;
+			color: #ffffff;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Personality Test</h1>
+	<form id="personality-test">
+		<fieldset>
+			<legend>You tend to enjoy spending time alone and value your independence.</legend>
+			<input type="radio" name="q1" value="yes">Yes<br>
+			<input type="radio" name="q1" value="sometimes">Sometimes<br>
+			<input type="radio" name="q1" value="no">No<br>
+		</fieldset>
+		<fieldset>
+			<legend>I tend to listen more than I talk in group conversations.</legend>
+			<input type="radio" name="q2" value="yes">Yes<br>
+			<input type="radio" name="q2" value="sometimes">Sometimes<br>
+			<input type="radio" name="q2" value="no">No<br>
+		</fieldset>
+
+		<fieldset>
+			<legend>I find it easier to express myself through writing rather than speaking.</legend>
+			<input type="radio" name="q3" value="yes">Yes<br>
+			<input type="radio" name="q3" value="sometimes">Sometimes<br>
+			<input type="radio" name="q3" value="no">No<br>
+		</fieldset>
+
+		<!-- Add more question fieldsets here as needed -->
+		<button type="submit">Submit</button>
+	</form>
+
+	<div id="result" class="result"></div>
+
+	<script>
+		const form = document.getElementById('personality-test');
+		const resultDiv = document.getElementById('result');
+
+		form.addEventListener('submit', function (event) {
+			event.preventDefault();
+			const q1 = document.querySelector('input[name="q1"]:checked').value;
+			const q2 = document.querySelector('input[name="q2"]:checked').value;
+			// Add more variables to capture additional questions as needed
+
+			// Calculate the personality type based on the user's answers
+			// Replace this code with your own logic to calculate the personality type
+			let result;
+			if (q1 === 'yes' && q2 === 'yes' && q3 === 'yes') {
+				result = 'Introvert 😶 ';
+			} else if (q1 === 'no' && q2 === 'no' && q3 === 'no') {
+				result = 'Extrovert 🫠 ';
+			} else {
+				result = 'Ambivert ✨ ';
+			}
+
+			// Display the resulting personality type in the page
+			resultDiv.textContent = `Your personality type is ${result}.`;
+		});
+	</script>
+</body>
+
+</html>
