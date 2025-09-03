@@ -3,12 +3,16 @@
 <head>
 	<title>Personality Test</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="./style.css">
 </head>
 <body>
+	<div class="container">
 	<h1>Personality Test</h1>
 	<div class="toolbar">
-		<button type="button" id="theme-toggle" aria-label="Toggle theme">Toggle Theme</button>
+		<button class="btn" type="button" id="theme-toggle" aria-label="Toggle theme">Toggle Theme</button>
 		<span id="progress-text" aria-live="polite">Progress: 0/3 answered</span>
 	</div>
 
@@ -18,30 +22,32 @@
 	<form id="personality-test">
 		<fieldset>
 			<legend>You tend to enjoy spending time alone and value your independence.</legend>
-			<input type="radio" name="q1" value="yes">Yes<br>
-			<input type="radio" name="q1" value="sometimes">Sometimes<br>
-			<input type="radio" name="q1" value="no">No<br>
+			<label class="option-card"><input type="radio" name="q1" value="yes"><span>Yes</span></label>
+			<label class="option-card"><input type="radio" name="q1" value="sometimes"><span>Sometimes</span></label>
+			<label class="option-card"><input type="radio" name="q1" value="no"><span>No</span></label>
 			<span class="error-text" aria-hidden="true">Please select an option.</span>
 		</fieldset>
 		<fieldset>
 			<legend>I tend to listen more than I talk in group conversations.</legend>
-			<input type="radio" name="q2" value="yes">Yes<br>
-			<input type="radio" name="q2" value="sometimes">Sometimes<br>
-			<input type="radio" name="q2" value="no">No<br>
+			<label class="option-card"><input type="radio" name="q2" value="yes"><span>Yes</span></label>
+			<label class="option-card"><input type="radio" name="q2" value="sometimes"><span>Sometimes</span></label>
+			<label class="option-card"><input type="radio" name="q2" value="no"><span>No</span></label>
 			<span class="error-text" aria-hidden="true">Please select an option.</span>
 		</fieldset>
 
 		<fieldset>
 			<legend>I find it easier to express myself through writing rather than speaking.</legend>
-			<input type="radio" name="q3" value="yes">Yes<br>
-			<input type="radio" name="q3" value="sometimes">Sometimes<br>
-			<input type="radio" name="q3" value="no">No<br>
+			<label class="option-card"><input type="radio" name="q3" value="yes"><span>Yes</span></label>
+			<label class="option-card"><input type="radio" name="q3" value="sometimes"><span>Sometimes</span></label>
+			<label class="option-card"><input type="radio" name="q3" value="no"><span>No</span></label>
 			<span class="error-text" aria-hidden="true">Please select an option.</span>
 		</fieldset>
 
 		<!-- Add more question fieldsets here as needed -->
-		<button type="submit">Submit</button>
-		<button type="button" id="reset-btn">Reset</button>
+		<div class="actions">
+			<button class="btn btn-primary" type="submit">Submit</button>
+			<button class="btn" type="button" id="reset-btn">Reset</button>
+		</div>
 	</form>
 
 	<div id="result" class="result"></div>

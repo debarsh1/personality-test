@@ -1,33 +1,34 @@
 body {
-	font-family: Arial, sans-serif;
-	background-color: #f1f1f1;
+	font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+	background: radial-gradient(1200px 600px at 50% -20%, #edeaff, transparent 60%), #f6f7fb;
+}
+
+.container {
+	max-width: 720px;
+	margin: 32px auto;
+	padding: 0 16px;
 }
 
 h1 {
 	text-align: center;
-	color: #ffffff;
-	font-family: Arial, sans-serif;
-	text-transform: uppercase;
-	background-color: #6e65d3;
-	padding: 10px;
-	border-radius: 5px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	color: #1f2143;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	margin: 16px 0 12px 0;
 }
 
 .toolbar {
-	max-width: 600px;
-	margin: 10px auto;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	gap: 12px;
+	margin: 12px 0;
 }
 
 .progress {
-	max-width: 600px;
 	height: 10px;
-	margin: 0 auto 12px auto;
-	background: #e5e5ef;
+	margin: 0 0 16px 0;
+	background: #e8e8f5;
 	border-radius: 999px;
 	overflow: hidden;
 }
@@ -36,20 +37,54 @@ h1 {
 	height: 100%;
 	width: 0%;
 	background: linear-gradient(90deg, #6e65d3, #9a7df7);
+	box-shadow: inset 0 0 1px rgba(0,0,0,0.2);
 	transition: width 0.3s ease;
 }
 
 form {
-	max-width: 600px;
 	margin: 0 auto;
-	padding: 20px;
-	background-color: #fff;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2), 0px 0px 20px rgba(0, 0, 15, 0.5);
+	padding: 24px;
+	background-color: #ffffff;
+	border: 1px solid rgba(34, 40, 75, 0.08);
+	box-shadow: 0 10px 30px rgba(34, 40, 75, 0.08);
+	border-radius: 16px;
 }
 
 fieldset {
 	margin-bottom: 20px;
 	border: none;
+}
+
+.option-card {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	padding: 12px 14px;
+	margin: 6px 8px 0 0;
+	border-radius: 12px;
+	border: 1px solid #e1e3f3;
+	background: #fbfbfe;
+	cursor: pointer;
+	user-select: none;
+	transition: border-color 0.2s ease, background 0.2s ease, transform 0.05s ease;
+}
+
+.option-card:hover {
+	border-color: #c8cbf6;
+	background: #f2f3ff;
+}
+
+.option-card input[type="radio"] {
+	display: none;
+}
+
+.option-card span {
+	color: #232752;
+	font-weight: 600;
+}
+
+.option-card input[type="radio"]:checked + span {
+	color: #3e38b0;
 }
 
 fieldset.error {
@@ -60,6 +95,7 @@ fieldset.error {
 legend {
 	font-weight: bold;
 	margin-bottom: 10px;
+ 	color: #1f2143;
 }
 
 input[type="radio"] {
@@ -76,62 +112,71 @@ fieldset.error .error-text {
 	display: inline-block;
 }
 
-button[type="submit"] {
-	display: block;
-	margin: 0 auto;
-	padding: 10px 20px;
-	background-color: #6e65d3;
-	color: #fff;
-	border: none;
-	font-size: 16px;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
-	border-radius: 20px;
-	/* adjust the value to your preference */
+.actions {
+	display: flex;
+	gap: 12px;
+	justify-content: flex-end;
+	margin-top: 8px;
 }
 
-button[type="submit"]:hover {
-	background-color: #000000;
+.btn {
+	appearance: none;
+	padding: 10px 16px;
+	border-radius: 12px;
+	border: 1px solid #dee1f3;
+	background: #f7f7fe;
+	color: #262a52;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background 0.2s ease, border-color 0.2s ease, transform 0.05s ease;
 }
 
-#reset-btn {
-	display: block;
-	margin: 10px auto 0 auto;
-	padding: 8px 16px;
-	background: #e5e5ef;
-	color: #333;
+.btn:hover { background: #f0f1ff; border-color: #c7cbf6; }
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+	background: linear-gradient(180deg, #6e65d3, #5b52c4);
 	border: none;
-	border-radius: 14px;
-	cursor: pointer;
+	color: white;
 }
+
+.btn-primary:hover { filter: brightness(1.05); }
+
+#reset-btn { }
 
 .result {
 	margin-top: 20px;
-	padding: 10px;
-	background-color: #6e65d3;
-	border-radius: 5px;
+	padding: 16px;
+	background: #f7f7fe;
+	border: 1px solid #e6e8f7;
+	border-radius: 12px;
 	text-align: center;
-	color: #ffffff;
+	color: #2a2e5b;
 }
 
 /* Theme support */
 body.dark {
-	background-color: #0f0f14;
+	background: radial-gradient(1200px 600px at 50% -20%, #141228, transparent 60%), #0f0f14;
 }
 
-body.dark h1 {
-	background-color: #2b2a4a;
-}
+body.dark h1 { color: #e7e8ff; }
 
 body.dark form {
 	background-color: #171726;
-	color: #eee;
+	color: #e8e9ff;
+	border-color: rgba(230, 232, 255, 0.06);
 }
 
 body.dark .progress {
-	background: #2a2a3a;
+	background: #23243a;
 }
 
 body.dark .result {
-	background-color: #2b2a4a;
+	background: #15162a;
+	border-color: rgba(230, 232, 255, 0.06);
+	color: #e7e8ff;
 }
+
+body.dark .option-card { background: #16172e; border-color: #2b2b46; }
+body.dark .option-card:hover { background: #1b1c37; border-color: #3a3a58; }
+body.dark .option-card span { color: #e7e8ff; }
