@@ -97,6 +97,7 @@ function applyTheme(theme) {
 	} else {
 		document.body.classList.remove('dark');
 	}
+	updateThemeToggleA11y();
 }
 
 function loadTheme() {
@@ -108,6 +109,7 @@ if (themeToggleBtn) {
 	themeToggleBtn.addEventListener('click', () => {
 		const isDark = document.body.classList.toggle('dark');
 		localStorage.setItem(THEME_STORAGE_KEY, isDark ? 'dark' : 'light');
+		updateThemeToggleA11y();
 	});
 }
 
@@ -149,3 +151,14 @@ document.addEventListener('change', (e) => {
 loadTheme();
 restoreAnswers();
 updateProgress();
+
+function updateThemeToggleA11y() {
+	if (!themeToggleBtn) return;
+	const isDark = document.body.classList.contains('dark');
+	const label = isDark ? 'Switch to day mode' : 'Switch to night mode';
+	themeToggleBtn.setAttribute('aria-label', label);
+	themeToggleBtn.setAttribute('title', label);
+}
+
+// Ensure initial a11y label matches theme on first paint
+updateThemeToggleA11y();

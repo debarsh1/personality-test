@@ -12,7 +12,15 @@
 	<div class="container">
 	<h1>Personality Test</h1>
 	<div class="toolbar">
-		<button class="btn" type="button" id="theme-toggle" aria-label="Toggle theme">Toggle Theme</button>
+		<button class="btn icon-btn" type="button" id="theme-toggle" aria-label="Switch to night mode" title="Switch to night mode">
+			<svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+				<circle cx="12" cy="12" r="4"></circle>
+				<path d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.364 6.364-1.414-1.414M8.05 8.05 6.636 6.636m10.728 0-1.414 1.414M8.05 15.95l-1.414 1.414"></path>
+			</svg>
+			<svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+				<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+			</svg>
+		</button>
 		<span id="progress-text" aria-live="polite">Progress: 0/3 answered</span>
 	</div>
 
