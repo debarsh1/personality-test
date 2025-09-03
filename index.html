@@ -7,18 +7,28 @@
 </head>
 <body>
 	<h1>Personality Test</h1>
+	<div class="toolbar">
+		<button type="button" id="theme-toggle" aria-label="Toggle theme">Toggle Theme</button>
+		<span id="progress-text" aria-live="polite">Progress: 0/3 answered</span>
+	</div>
+
+	<div class="progress" aria-hidden="true">
+		<div class="progress-bar" id="progress-bar" style="width: 0%"></div>
+	</div>
 	<form id="personality-test">
 		<fieldset>
 			<legend>You tend to enjoy spending time alone and value your independence.</legend>
 			<input type="radio" name="q1" value="yes">Yes<br>
 			<input type="radio" name="q1" value="sometimes">Sometimes<br>
 			<input type="radio" name="q1" value="no">No<br>
+			<span class="error-text" aria-hidden="true">Please select an option.</span>
 		</fieldset>
 		<fieldset>
 			<legend>I tend to listen more than I talk in group conversations.</legend>
 			<input type="radio" name="q2" value="yes">Yes<br>
 			<input type="radio" name="q2" value="sometimes">Sometimes<br>
 			<input type="radio" name="q2" value="no">No<br>
+			<span class="error-text" aria-hidden="true">Please select an option.</span>
 		</fieldset>
 
 		<fieldset>
@@ -26,10 +36,12 @@
 			<input type="radio" name="q3" value="yes">Yes<br>
 			<input type="radio" name="q3" value="sometimes">Sometimes<br>
 			<input type="radio" name="q3" value="no">No<br>
+			<span class="error-text" aria-hidden="true">Please select an option.</span>
 		</fieldset>
 
 		<!-- Add more question fieldsets here as needed -->
 		<button type="submit">Submit</button>
+		<button type="button" id="reset-btn">Reset</button>
 	</form>
 
 	<div id="result" class="result"></div>

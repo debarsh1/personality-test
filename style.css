@@ -14,6 +14,31 @@ h1 {
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+.toolbar {
+	max-width: 600px;
+	margin: 10px auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 12px;
+}
+
+.progress {
+	max-width: 600px;
+	height: 10px;
+	margin: 0 auto 12px auto;
+	background: #e5e5ef;
+	border-radius: 999px;
+	overflow: hidden;
+}
+
+.progress-bar {
+	height: 100%;
+	width: 0%;
+	background: linear-gradient(90deg, #6e65d3, #9a7df7);
+	transition: width 0.3s ease;
+}
+
 form {
 	max-width: 600px;
 	margin: 0 auto;
@@ -27,6 +52,11 @@ fieldset {
 	border: none;
 }
 
+fieldset.error {
+	outline: 2px solid #e74c3c;
+	border-radius: 6px;
+}
+
 legend {
 	font-weight: bold;
 	margin-bottom: 10px;
@@ -34,6 +64,16 @@ legend {
 
 input[type="radio"] {
 	margin-right: 5px;
+}
+
+.error-text {
+	display: none;
+	color: #e74c3c;
+	font-size: 14px;
+}
+
+fieldset.error .error-text {
+	display: inline-block;
 }
 
 button[type="submit"] {
@@ -54,6 +94,17 @@ button[type="submit"]:hover {
 	background-color: #000000;
 }
 
+#reset-btn {
+	display: block;
+	margin: 10px auto 0 auto;
+	padding: 8px 16px;
+	background: #e5e5ef;
+	color: #333;
+	border: none;
+	border-radius: 14px;
+	cursor: pointer;
+}
+
 .result {
 	margin-top: 20px;
 	padding: 10px;
@@ -61,4 +112,26 @@ button[type="submit"]:hover {
 	border-radius: 5px;
 	text-align: center;
 	color: #ffffff;
+}
+
+/* Theme support */
+body.dark {
+	background-color: #0f0f14;
+}
+
+body.dark h1 {
+	background-color: #2b2a4a;
+}
+
+body.dark form {
+	background-color: #171726;
+	color: #eee;
+}
+
+body.dark .progress {
+	background: #2a2a3a;
+}
+
+body.dark .result {
+	background-color: #2b2a4a;
 }
